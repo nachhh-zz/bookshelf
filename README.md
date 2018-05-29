@@ -3,7 +3,7 @@
 How to start the bookshelf application
 ---
 
-1. Run `sh deploy.sh` or manually (no docker)
+1. Run `sh deploy.sh` or manually (no docker) foolow next steps:
 1. Run `ng build --prod` to build ui code. 
 1. Run `sqlite3 bookshelf.db < create_db.sql` to generate sqlite DB structure
 1. Run `mvn clean install` to build your application
