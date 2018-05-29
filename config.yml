@@ -2,3 +2,7 @@ logging:
   level: INFO
   loggers:
     bookshelf: DEBUG
+  
+# HTTP-specific options.
+server:
+  rootPath: /service/*

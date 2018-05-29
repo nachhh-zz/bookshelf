@@ -1,10 +1,22 @@
 package bookshelf;
 
-import io.dropwizard.Configuration;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import org.hibernate.validator.constraints.*;
-import javax.validation.constraints.*;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
-public class BookshelfConfiguration extends Configuration {
-    // TODO: implement service configuration
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import io.dropwizard.Configuration;
+import io.dropwizard.bundles.assets.AssetsBundleConfiguration;
+import io.dropwizard.bundles.assets.AssetsConfiguration;
+
+public class BookshelfConfiguration extends Configuration implements AssetsBundleConfiguration{
+  
+  @Valid
+  @NotNull
+  @JsonProperty
+  private final AssetsConfiguration assets = AssetsConfiguration.builder().build();
+  
+  public AssetsConfiguration getAssetsConfiguration() {
+    return assets;
+  }
 }
